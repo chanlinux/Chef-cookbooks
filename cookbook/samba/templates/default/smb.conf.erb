@@ -4,6 +4,15 @@
 #
 # Local modifications will be overwritten by Chef.
 #
+[global]
+  workgroup = <%= node["samba"]["workgroup"] %>
+  server string = <%= node["samba"]["server_string"] %>
+  security = <%= node["samba"]["security"] %>
+  interfaces = <%= node["samba"]["interfaces"] %>
+  hosts allow = <%= node["samba"]["hosts_allow"] %>
+  load printers = <%= node["samba"]["load_printers"] %>
+  passdb backend = <%= node["samba"]["passdb_backend"] %>
+  dns proxy = <%= node["samba"]["dns_proxy"] %>
 
 #============================ Share Definitions ==============================
 <%  @data.each do |x| -%>

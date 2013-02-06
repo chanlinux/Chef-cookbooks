@@ -16,6 +16,10 @@ pkgs.each do |packs|
 	package packs
 end
 
+service "smb" do
+  supports :status => true, :restart => true, :reload => true
+  action :enable
+end
 
 shares = data_bag_item("samba", node[:samba][:sharename])
 shares["shares"].each do |k,v|
@@ -28,8 +32,6 @@ template "/etc/samba/smb.conf" do
     group "root"
     mode 00644
     variables ( {:data => array})
+    notifies :restart,"service[smb]"
 end
 
-service "smb" do
-	action :nothing
-end
