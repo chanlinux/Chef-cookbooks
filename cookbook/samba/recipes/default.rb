@@ -9,7 +9,7 @@
 array=Array.new
 pkgs=value_for_platform(
 	["centos","redhat","fedora"] => { "default" => ["samba","samba-common","samba-client"]},
-	["ubuntu"]=> { "default" => ["samba"]}
+	["ubuntu"]=> { "default" => ["samba","samclient","smbfs"]}
 )
 
 pkgs.each do |packs|
