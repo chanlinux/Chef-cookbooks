@@ -2,10 +2,6 @@
 # Cookbook Name:: samba
 # Recipe:: default
 #
-# Copyright 2013, YOUR_COMPANY_NAME
-#
-# All rights reserved - Do Not Redistribute
-#
 array=Array.new
 pkgs=value_for_platform(
 	["centos","redhat","fedora"] => { "default" => ["samba","samba-common","samba-client"]},
