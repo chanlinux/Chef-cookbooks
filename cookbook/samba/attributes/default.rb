@@ -1,0 +1,1 @@
+set[:samba][:sharename]="shares"
